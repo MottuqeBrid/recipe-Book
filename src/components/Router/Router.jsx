@@ -1,0 +1,48 @@
+import { createBrowserRouter } from "react-router";
+import RootLayout from "../Layout/RootLayout";
+import NotFound from "../NotFound/NotFound";
+import Home from "../Home/Home";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
+import AddRecipe from "../AddRecipe/AddRecipe";
+import AllRecipes from "../AllRecipes/AllRecipes";
+import RecipeDetails from "../RecipeDetails/RecipeDetails";
+import MyRecipes from "../MyRecipes/MyRecipes";
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "add-recipe",
+        element: <AddRecipe />,
+      },
+      {
+        path: "recipes",
+        element: <AllRecipes />,
+      },
+      {
+        path: "recipes/:id",
+        element: <RecipeDetails />,
+      },
+      {
+        path: "my-recipes",
+        element: <MyRecipes />,
+      },
+    ],
+  },
+]);

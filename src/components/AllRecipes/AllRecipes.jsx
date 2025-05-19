@@ -42,10 +42,8 @@ const AllRecipes = () => {
             />
             <div className="mt-4">
               <h3 className="text-xl font-semibold mb-1">{recipe.title}</h3>
-              <p className="text-sm">Cuisine: {recipe.cuisineType || "N/A"}</p>
-              <p className="text-sm">
-                Prep Time: {recipe.preparationTime} mins
-              </p>
+              <p className="text-sm">Cuisine: {recipe.cuisine || "Others"}</p>
+              <p className="text-sm">Prep Time: {recipe.prepTime} mins</p>
               <p className="text-sm">Likes: {recipe.likeCount}</p>
             </div>
             <div className="mt-4 text-right">

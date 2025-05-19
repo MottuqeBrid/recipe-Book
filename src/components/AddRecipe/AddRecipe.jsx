@@ -52,7 +52,9 @@ const AddRecipe = () => {
 
       if (res.ok) {
         toast.success("Recipe added successfully!");
-        navigate("/all-recipes");
+        setTimeout(() => {
+          navigate("/recipes");
+        }, 1500);
       } else {
         toast.error("Failed to add recipe.");
       }

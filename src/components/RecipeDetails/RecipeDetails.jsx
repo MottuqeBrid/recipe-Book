@@ -13,7 +13,7 @@ const RecipeDetails = () => {
     fetch(`http://localhost:5000/recipes/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setRecipe(data[0]);
         setLoading(false);
       });

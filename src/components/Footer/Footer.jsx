@@ -23,11 +23,11 @@ const Footer = () => {
           <h3 className="font-semibold">Contact Us</h3>
           <p>
             Email:{" "}
-            <a href="mailto:recipebook@example.com" className="link">
-              recipebook@example.com
+            <a href="mailto:Sahoreiasorker@gmail.com" className="link">
+              Sahoreiasorker@gmail.com
             </a>
           </p>
-          <p>Phone: +123-456-7890</p>
+          <p>Phone: +8801308133343</p>
         </div>
 
         {/* Social Media Links */}

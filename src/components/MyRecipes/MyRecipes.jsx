@@ -14,9 +14,12 @@ const MyRecipes = () => {
 
   useEffect(() => {
     const fetchMyRecipes = async () => {
-      const res = await fetch(`http://localhost:5000/recipes/${user.email}`);
+      const res = await fetch(
+        `http://localhost:5000/recipes/email/${user.email}`
+      );
       const data = await res.json();
       setMyRecipes(data);
+      // console.log(data);
     };
 
     if (user?.email) fetchMyRecipes();

@@ -2,19 +2,20 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 // import useAuth from "../../providers/useAuth";
+import useAuth from "./../../providers/useAuth";
 
 const RecipeDetails = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
-  //   const { user } = useAuth();
+  const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/recipes/${id}`)
+    fetch(`http://localhost:5000/recipes/id/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
-        setRecipe(data[0]);
+        setRecipe(data);
         setLoading(false);
       });
   }, [id]);
@@ -43,13 +44,12 @@ const RecipeDetails = () => {
     cuisine,
     ingredients,
     instructions,
-
     preparationTime,
     categories,
     likeCount,
     addedBy,
+    userEmail,
   } = recipe;
-  //   console.log(recipe);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
@@ -72,12 +72,16 @@ const RecipeDetails = () => {
             <strong>Categories:</strong> {categories?.join(", ")}
           </p>
           <p>
-            <strong>Likes:</strong> {likeCount}
+            <strong>{likeCount}</strong> people interested in this recipe
           </p>
           <p>
             <strong>Added by:</strong> {addedBy?.name || "Anonymous"}
           </p>
-          <button onClick={handleLike} className="btn btn-success btn-sm mt-4">
+          <button
+            disabled={user?.email == userEmail || !user}
+            onClick={handleLike}
+            className="btn btn-success btn-sm mt-4"
+          >
             ❤️ Like
           </button>
         </div>

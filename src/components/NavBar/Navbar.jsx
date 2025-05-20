@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 import { Link } from "react-router";
 import useAuth from "../../providers/useAuth";
+import ThemeToggle from "./ThemeToggle";
 // import useAuth from "../hooks/useAuth";
 // gti
 
@@ -10,9 +11,12 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-md">
       <div className="flex-1">
-        <Link to="/" className="text-xl font-bold">
-          Recipe Book
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link to="/" className="text-xl font-bold">
+            Recipe Book
+          </Link>
+          <ThemeToggle />
+        </div>
       </div>
       <div className="flex-none gap-2">
         <ul className="menu menu-horizontal px-1">

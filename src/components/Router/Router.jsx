@@ -9,6 +9,8 @@ import AllRecipes from "../AllRecipes/AllRecipes";
 import RecipeDetails from "../RecipeDetails/RecipeDetails";
 import MyRecipes from "../MyRecipes/MyRecipes";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Profile from "../Profile/Profile";
+import CommentsPage from "../CommentsPage/CommentsPage";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +51,22 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyRecipes />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "comments",
+        element: (
+          <PrivateRoute>
+            <CommentsPage />
           </PrivateRoute>
         ),
       },

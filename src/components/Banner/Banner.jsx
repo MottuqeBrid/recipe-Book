@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Link } from "react-router";
 const Banner = ({ topRecipes }) => {
   return (
     <div className="carousel w-full mb-8 mt-8">
@@ -35,25 +36,17 @@ const Banner = ({ topRecipes }) => {
                   {recipe.title}
                 </h2>
                 <p className="text-gray-600 mt-2">{recipe.description}</p>
-                <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition">
+                <Link
+                  to={`/recipes/${recipe._id}`}
+                  className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
+                >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide> */}
       </Swiper>
-      {/* </div> */}
-      {/* </div> */}
     </div>
   );
 };

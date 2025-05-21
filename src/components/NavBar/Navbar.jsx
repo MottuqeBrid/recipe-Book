@@ -35,6 +35,9 @@ const Navbar = () => {
               <li>
                 <Link to="/my-recipes">My Recipes</Link>
               </li>
+              <li>
+                <Link to="/comments">Comments</Link>
+              </li>
             </>
           )}
         </ul>
@@ -71,7 +74,9 @@ const Navbar = () => {
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <span className="text-center">{user.displayName}</span>
+                <Link to="/profile" className="text-center">
+                  {user.displayName}
+                </Link>
               </li>
               <li>
                 <button onClick={logout}>Logout</button>

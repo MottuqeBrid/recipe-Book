@@ -8,7 +8,6 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import useAuth from "../../providers/useAuth";
-// import { auth } from "../firebase/firebase.config";
 
 const Login = () => {
   const { auth } = useAuth();

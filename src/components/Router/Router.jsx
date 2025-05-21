@@ -8,6 +8,7 @@ import AddRecipe from "../AddRecipe/AddRecipe";
 import AllRecipes from "../AllRecipes/AllRecipes";
 import RecipeDetails from "../RecipeDetails/RecipeDetails";
 import MyRecipes from "../MyRecipes/MyRecipes";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "add-recipe",
-        element: <AddRecipe />,
+        element: (
+          <PrivateRoute>
+            <AddRecipe />
+          </PrivateRoute>
+        ),
       },
       {
         path: "recipes",
@@ -41,7 +46,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "my-recipes",
-        element: <MyRecipes />,
+        element: (
+          <PrivateRoute>
+            <MyRecipes />
+          </PrivateRoute>
+        ),
       },
     ],
   },

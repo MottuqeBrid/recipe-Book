@@ -1,7 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-// import useAuth from "../../providers/useAuth";
 import useAuth from "./../../providers/useAuth";
 
 const RecipeDetails = () => {

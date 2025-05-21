@@ -10,15 +10,12 @@ const Footer = () => {
   return (
     <footer className="bg-base-200 text-base-content py-10">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-        {/* Website Name & Copyright */}
         <div>
           <h2 className="text-xl font-bold">Recipe Book</h2>
           <p className="mt-2">
             &copy; {new Date().getFullYear()} Recipe Book. All rights reserved.
           </p>
         </div>
-
-        {/* Contact Info */}
         <div>
           <h3 className="font-semibold">Contact Us</h3>
           <p>

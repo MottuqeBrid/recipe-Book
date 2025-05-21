@@ -20,7 +20,11 @@ const Footer = () => {
           <h3 className="font-semibold">Contact Us</h3>
           <p>
             Email:{" "}
-            <a href="mailto:Sahoreiasorker@gmail.com" className="link">
+            <a
+              href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCKHRLhsTdvrczKRbZCpJfLGLvDCKXkGvshwsCkxvSHhclhbLkqlgqDwLZKSpWsJbCdVfkkg"
+              target="_blank"
+              className="link"
+            >
               Sahoreiasorker@gmail.com
             </a>
           </p>
@@ -52,10 +56,7 @@ const Footer = () => {
             >
               <FaInstagram />
             </a>
-            <a
-              href="mailto:recipebook@example.com"
-              className="hover:text-red-500"
-            >
+            <a href="#" className="hover:text-red-500">
               <FaEnvelope />
             </a>
           </div>

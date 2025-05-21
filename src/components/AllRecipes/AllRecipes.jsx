@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { Tooltip } from "react-tooltip";
 
 const AllRecipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -56,12 +57,20 @@ const AllRecipes = () => {
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {filteredRecipes.map((recipe) => (
-          <div key={recipe._id} className="bg-white rounded-2xl shadow-lg p-4">
-            <img
-              src={recipe.image || "https://via.placeholder.com/150"}
-              alt={recipe.title}
-              className="w-full h-40 object-cover rounded-xl"
-            />
+          <div key={recipe._id} className=" rounded-2xl shadow-lg p-4">
+            <Tooltip
+              anchorSelect={`.my-anchor-element-${recipe._id}`}
+              place="top"
+            >
+              {recipe.title}
+            </Tooltip>
+            <a className={`my-anchor-element-${recipe._id}`}>
+              <img
+                src={recipe.image || "https://via.placeholder.com/150"}
+                alt={recipe.title}
+                className="w-full h-40 object-cover rounded-xl"
+              />
+            </a>
             <div className="mt-4">
               <h3 className="text-xl font-semibold mb-1">{recipe.title}</h3>
               <p className="text-sm">Cuisine: {recipe.cuisine || "Others"}</p>

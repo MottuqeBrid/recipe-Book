@@ -2,6 +2,7 @@
 import { Link } from "react-router";
 import useAuth from "../../providers/useAuth";
 import ThemeToggle from "./ThemeToggle";
+import { Tooltip } from "react-tooltip";
 // import useAuth from "../hooks/useAuth";
 // gti
 
@@ -50,15 +51,20 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="dropdown dropdown-end">
+            <Tooltip anchorSelect={`.my-anchor-element`} place="top">
+              {user.displayName}
+            </Tooltip>
             <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
-              <img
-                src={user.photoURL || "/placeholder.jpg"}
-                className="w-10 rounded-full"
-              />
+              <a className={`my-anchor-element`}>
+                <img
+                  src={user.photoURL || "/placeholder.jpg"}
+                  className="w-10 rounded-full"
+                />
+              </a>
             </div>
             <ul
               tabIndex={0}

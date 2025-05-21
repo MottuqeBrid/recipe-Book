@@ -1,3 +1,5 @@
+import { Tooltip } from "react-tooltip";
+
 const MyRecipesCard = ({
   recipe,
   setEditingRecipe,
@@ -6,14 +8,19 @@ const MyRecipesCard = ({
   handleDelete,
 }) => {
   return (
-    <div key={recipe._id} className="card bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src={recipe.image}
-          alt={recipe.title}
-          className="h-48 w-full object-cover"
-        />
-      </figure>
+    <div key={recipe._id} className="card bg-base-100 shadow-xl rounded-2xl">
+      <Tooltip anchorSelect={`.my-anchor-element-${recipe._id}`} place="top">
+        {recipe.title}
+      </Tooltip>
+      <a className={`my-anchor-element-${recipe._id}`}>
+        <figure>
+          <img
+            src={recipe.image}
+            alt={recipe.title}
+            className="h-48 w-full object-cover "
+          />
+        </figure>
+      </a>
       <div className="card-body">
         <h2 className="card-title">{recipe.title}</h2>
         <p>

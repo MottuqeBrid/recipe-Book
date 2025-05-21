@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <Banner />
+      <Banner topRecipes={topRecipes} />
 
       {/* Top Recipes */}
       <div className="max-w-6xl mx-auto px-4 py-8">

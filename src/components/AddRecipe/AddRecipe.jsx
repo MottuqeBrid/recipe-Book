@@ -85,7 +85,7 @@ const AddRecipe = () => {
       <h2 className="text-3xl font-bold mb-6 text-center">Add New Recipe</h2>
       <form
         onSubmit={handleAddRecipe}
-        className="space-y-5 bg-white p-6 shadow-md rounded-xl"
+        className="space-y-5  p-6 shadow-md rounded-xl"
       >
         <input
           name="image"

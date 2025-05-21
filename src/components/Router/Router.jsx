@@ -13,6 +13,7 @@ import Profile from "../Profile/Profile";
 import CommentsPage from "../CommentsPage/CommentsPage";
 import BlogPage from "../BlogPage/BlogPage";
 import CreateBlog from "../CreateBlog/CreateBlog";
+import ViewBlogPage from "../ViewBlogPage/ViewBlogPage";
 
 export const router = createBrowserRouter([
   {
@@ -50,7 +51,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "create-blog",
-        element: <CreateBlog />,
+        element: (
+          <PrivateRoute>
+            <CreateBlog />
+          </PrivateRoute>
+        ),
       },
       {
         path: "recipes/:id",
@@ -61,6 +66,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyRecipes />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/blogs/:id",
+        element: (
+          <PrivateRoute>
+            <ViewBlogPage />
           </PrivateRoute>
         ),
       },

@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex-none gap-2">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 hidden sm:flex">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -76,6 +76,30 @@ const Navbar = () => {
               tabIndex={0}
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
+              <ul className="menu menu-horizontal px-1 sm:hidden flex-col">
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/recipes">All Recipes</Link>
+                </li>
+                <li>
+                  <Link to="/blogs">Blog</Link>
+                </li>
+                {user && (
+                  <>
+                    <li>
+                      <Link to="/add-recipe">Add Recipe</Link>
+                    </li>
+                    <li>
+                      <Link to="/my-recipes">My Recipes</Link>
+                    </li>
+                    <li>
+                      <Link to="/comments">Comments</Link>
+                    </li>
+                  </>
+                )}
+              </ul>
               <li>
                 <Link to="/profile" className="text-center">
                   {user.displayName}

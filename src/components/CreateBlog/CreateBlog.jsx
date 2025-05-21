@@ -30,6 +30,7 @@ const CreateBlog = () => {
       userPhoto: user.photoURL,
       createdAt: new Date(),
     };
+    console.log(blogData);
 
     try {
       const res = await fetch("http://localhost:5000/recipes/blogs", {
@@ -82,14 +83,14 @@ const CreateBlog = () => {
           className="input input-bordered w-full"
         />
 
-        <input
+        {/* <input
           type="text"
           name="posterImage"
           value={formData.posterImage}
           onChange={handleChange}
           placeholder="Poster Image URL"
           className="input input-bordered w-full"
-        />
+        /> */}
 
         <textarea
           name="content"

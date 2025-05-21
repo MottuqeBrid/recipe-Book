@@ -11,6 +11,8 @@ import MyRecipes from "../MyRecipes/MyRecipes";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Profile from "../Profile/Profile";
 import CommentsPage from "../CommentsPage/CommentsPage";
+import BlogPage from "../BlogPage/BlogPage";
+import CreateBlog from "../CreateBlog/CreateBlog";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ export const router = createBrowserRouter([
       {
         path: "recipes",
         element: <AllRecipes />,
+      },
+      {
+        path: "blogs",
+        element: <BlogPage />,
+      },
+      {
+        path: "create-blog",
+        element: <CreateBlog />,
       },
       {
         path: "recipes/:id",

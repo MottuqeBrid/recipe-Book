@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import useAuth from "../../providers/useAuth";
 import MyRecipesCard from "./MyRecipesCard";
 import MyRecipesUpdateModal from "./MyRecipesUpdateModal";
+import NoRecipes from "./NoRecipes";
 
 const MyRecipes = () => {
   const { user } = useAuth();
@@ -101,21 +102,24 @@ const MyRecipes = () => {
       toast.error("Update failed.");
     }
   };
+  // console.log(myRecipes);
 
   return (
     <div className="max-w-6xl mx-auto py-10 px-4">
       <h2 className="text-3xl font-bold mb-6 text-center">My Recipes</h2>
+      {myRecipes.length === 0 && <NoRecipes />}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {myRecipes.map((recipe) => (
-          <MyRecipesCard
-            key={recipe._id}
-            setEditingRecipe={setEditingRecipe}
-            setIngredientList={setIngredientList}
-            setSelectedCategories={setSelectedCategories}
-            handleDelete={handleDelete}
-            recipe={recipe}
-          />
-        ))}
+        {myRecipes.length > 0 &&
+          myRecipes.map((recipe) => (
+            <MyRecipesCard
+              key={recipe._id}
+              setEditingRecipe={setEditingRecipe}
+              setIngredientList={setIngredientList}
+              setSelectedCategories={setSelectedCategories}
+              handleDelete={handleDelete}
+              recipe={recipe}
+            />
+          ))}
       </div>
 
       {/* Update Modal */}

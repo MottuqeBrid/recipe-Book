@@ -74,7 +74,7 @@ const RecipeDetails = () => {
             <strong>{likeCount}</strong> people interested in this recipe
           </p>
           <p>
-            <strong>Added by:</strong> {addedBy?.name || "Anonymous"}
+            <strong>Added by:</strong> {addedBy || "Anonymous"}
           </p>
           <button
             disabled={user?.email == userEmail || !user}

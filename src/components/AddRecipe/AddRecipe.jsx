@@ -52,9 +52,7 @@ const AddRecipe = () => {
 
       if (res.ok) {
         toast.success("Recipe added successfully!");
-        setTimeout(() => {
-          navigate("/recipes");
-        }, 1500);
+        navigate("/recipes");
       } else {
         toast.error("Failed to add recipe.");
       }
@@ -101,12 +99,6 @@ const AddRecipe = () => {
           className="input input-bordered w-full"
           required
         />
-        {/* <textarea
-          name="ingredients"
-          placeholder="Ingredients"
-          className="textarea textarea-bordered w-full"
-          required
-        /> */}
 
         {/* INGREDIENTS SECTION */}
         <div>

@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "./../../providers/useAuth";
+import { Typewriter } from "react-simple-typewriter";
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -52,7 +53,9 @@ const RecipeDetails = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold mb-6 text-center">{title}</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        <Typewriter words={[title]} loop={true} cursor />
+      </h1>
 
       <div className="flex flex-col md:flex-row gap-6">
         <img
@@ -74,7 +77,8 @@ const RecipeDetails = () => {
             <strong>{likeCount}</strong> people interested in this recipe
           </p>
           <p>
-            <strong>Added by:</strong> {addedBy || "Anonymous"}
+            <strong>Added by: </strong>
+            <Typewriter words={[addedBy || "Anonymous"]} loop={true} cursor />
           </p>
           <button
             disabled={user?.email == userEmail || !user}

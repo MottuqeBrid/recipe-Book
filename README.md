@@ -1,12 +1,59 @@
-# React + Vite
+# RecipeVerse 🍽️ - Your Ultimate Recipe & Blogging Companion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Site:** [https://your-recipeverse-site-url.com](https://your-recipeverse-site-url.com)
 
-Currently, two official plugins are available:
+## 🔥 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 **Authentication & Private Routes:** Users must log in to add, edit, or view specific pages like "My Recipes" or "Add Recipe".
+- 📖 **Recipe Management:** Users can create, view, update, and delete recipes, complete with images, categories, and cuisine types.
+- 💬 **Interactive Comments:** Users can comment on both recipes and blogs, and only authors can delete their own comments.
+- 📝 **Blog System:** Users can write blogs with titles, keywords, poster images, and more. Blog comments are also supported.
+- 🎨 **Theme Toggle:** Seamlessly switch between light and dark modes for better accessibility and user experience.
+- 🔍 **Search & Filter:** Filter recipes by cuisine and search by recipe/blog title for easy navigation.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👨‍💻 Built with React, Tailwind CSS, Node.js, Express, and MongoDB.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** – UI library
+- **React Router** – Client-side routing
+- **Tailwind CSS** – Utility-first CSS framework
+- **DaisyUI** – Styled UI components
+- **React Toastify** – Notifications
+- **Firebase Auth** – User authentication (via context)
+
+---
+
+## 🔐 Authentication & Protected Routes
+
+- Only logged-in users can access:
+  - `Add Recipe`
+  - `My Recipes`
+  - `Create Blog`
+- Implemented using `useAuth()` context + `PrivateRoute` wrapper component.
+
+---
+
+## 💡 Main Features
+
+- 🔐 **User Authentication:** Sign in/out with Firebase (email + Google).
+- 🧑‍🍳 **Add, Edit, Delete Recipes:** With fields for title, cuisine, prep time, categories, and ingredients.
+- ❤️ **Like Button:** Like recipes, count is stored in DB.
+- 💬 **Comments:** View/Add/Delete comments for each recipe and blog.
+- 📝 **Blog Management:** Users can write blogs with images, keywords, and rich content.
+- 🌗 **Dark/Light Theme Toggle:** Seamless switch with persistence.
+- 🔍 **Search & Filter:** Filter recipes by cuisine and search by title.
+- 🖼️ **Responsive UI:** Fully responsive and mobile-friendly.
+
+---
+
+## 🧪 Installation & Run Locally
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-MottuqeBrid.git
+   ```

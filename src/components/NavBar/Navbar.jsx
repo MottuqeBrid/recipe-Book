@@ -3,8 +3,6 @@ import { Link } from "react-router";
 import useAuth from "../../providers/useAuth";
 import ThemeToggle from "./ThemeToggle";
 import { Tooltip } from "react-tooltip";
-// import useAuth from "../hooks/useAuth";
-// gti
 
 const Navbar = () => {
   const { user, logout } = useAuth();

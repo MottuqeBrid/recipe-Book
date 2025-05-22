@@ -10,7 +10,7 @@ const RecipeDetails = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/recipes/id/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/recipes/id/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -20,7 +20,7 @@ const RecipeDetails = () => {
   }, [id]);
 
   const handleLike = () => {
-    fetch(`http://localhost:5000/recipes/${id}/like`, {
+    fetch(`${import.meta.env.VITE_API_URL}/recipes/${id}/like`, {
       method: "PATCH",
     })
       .then((res) => res.json())

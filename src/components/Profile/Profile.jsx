@@ -39,7 +39,6 @@ export default function Profile() {
       console.error("Error updating Firebase profile:", error);
     }
   };
-  // console.log(auth.currentUser);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-8">

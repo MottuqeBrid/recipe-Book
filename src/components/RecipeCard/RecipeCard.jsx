@@ -1,4 +1,3 @@
-// src/components/RecipeCard/RecipeCard.jsx
 import { Link } from "react-router";
 import { Tooltip } from "react-tooltip";
 

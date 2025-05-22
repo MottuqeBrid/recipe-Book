@@ -13,20 +13,18 @@ const BlogPage = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipes/blogs")
+    fetch(`${import.meta.env.VITE_API_URL}/recipes/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data))
       .catch(() => toast.error("Failed to load blogs"));
   }, []);
 
-  // ?blogId=
   const handleOpenComments = (blog) => {
     // console.log(blog);
     setSelectedBlog(blog);
-    fetch(`http://localhost:5000/recipes/blogs/comments/${blog._id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/recipes/blogs/comments/${blog._id}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setComments([...data]);
       })
       .catch(() => toast.error("Failed to load comments"));
@@ -47,7 +45,9 @@ const BlogPage = () => {
     };
 
     const res = await fetch(
-      `http://localhost:5000/recipes/blogs/${selectedBlog._id}/comments`,
+      `${import.meta.env.VITE_API_URL}/recipes/blogs/${
+        selectedBlog._id
+      }/comments`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -67,7 +67,9 @@ const BlogPage = () => {
   const handleDeleteComment = async (commentId, blogId) => {
     console.log(commentId, blogId);
     const res = await fetch(
-      `http://localhost:5000/recipes/blogs/${blogId}/comments/${commentId}`,
+      `${
+        import.meta.env.VITE_API_URL
+      }/recipes/blogs/${blogId}/comments/${commentId}`,
       {
         method: "DELETE",
       }

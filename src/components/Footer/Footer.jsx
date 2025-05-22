@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import {
   FaFacebookF,
   FaTwitter,
@@ -31,7 +30,6 @@ const Footer = () => {
           <p>Phone: +8801308133343</p>
         </div>
 
-        {/* Social Media Links */}
         <div>
           <h3 className="font-semibold">Follow Us</h3>
           <div className="flex justify-center md:justify-start gap-4 mt-2 text-xl">

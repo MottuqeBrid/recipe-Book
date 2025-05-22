@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import Banner from "../Banner/Banner";
@@ -8,7 +7,7 @@ const Home = () => {
   const [topRecipes, setTopRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipes/top") // Replace with actual backend endpoint
+    fetch(`${import.meta.env.VITE_API_URL}/recipes/top`)
       .then((res) => res.json())
       .then((data) => setTopRecipes(data));
   }, []);
@@ -17,7 +16,6 @@ const Home = () => {
     <>
       <Banner topRecipes={topRecipes} />
 
-      {/* Top Recipes */}
       <div className="max-w-6xl mx-auto px-4 py-8">
         <h2 className="text-3xl font-bold mb-6 text-center">Top Recipes</h2>
         <div className="grid md:grid-cols-3 gap-6">

@@ -33,7 +33,7 @@ const CreateBlog = () => {
     console.log(blogData);
 
     try {
-      const res = await fetch("http://localhost:5000/recipes/blogs", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/recipes/blogs`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(blogData),
@@ -82,15 +82,6 @@ const CreateBlog = () => {
           placeholder="Image URL"
           className="input input-bordered w-full"
         />
-
-        {/* <input
-          type="text"
-          name="posterImage"
-          value={formData.posterImage}
-          onChange={handleChange}
-          placeholder="Poster Image URL"
-          className="input input-bordered w-full"
-        /> */}
 
         <textarea
           name="content"

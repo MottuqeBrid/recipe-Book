@@ -1,6 +1,5 @@
 // src/pages/AddRecipe.jsx
 import { useState } from "react";
-// import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import useAuth from "../../providers/useAuth";
@@ -17,7 +16,6 @@ const AddRecipe = () => {
     const form = e.target;
     const image = form.image.value;
     const title = form.title.value;
-    // const ingredients = form.ingredients.value;
     const instructions = form.instructions.value;
     const cuisine = form.cuisine.value;
     const prepTime = parseInt(form.prepTime.value);
@@ -42,7 +40,7 @@ const AddRecipe = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/recipes", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/recipes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

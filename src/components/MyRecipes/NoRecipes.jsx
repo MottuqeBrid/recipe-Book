@@ -1,5 +1,4 @@
 import { Typewriter } from "react-simple-typewriter";
-// import { Fade } from "react-awesome-reveal";
 import { FaUtensils } from "react-icons/fa";
 
 export default function NoRecipes() {

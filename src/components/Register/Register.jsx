@@ -1,4 +1,3 @@
-// src/pages/Register.jsx
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import {

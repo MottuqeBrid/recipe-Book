@@ -9,7 +9,7 @@ const AllRecipes = () => {
   const [selectedCuisine, setSelectedCuisine] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch(`${import.meta.env.VITE_API_URL}/recipes`)
       .then((res) => res.json())
       .then((data) => {
         setRecipes(data);

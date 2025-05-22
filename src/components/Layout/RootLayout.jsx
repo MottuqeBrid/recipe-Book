@@ -3,7 +3,6 @@ import { Outlet } from "react-router";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { ThemeContext } from "../../providers/ThemeContext";
-// import ThemeProvider from "../../providers/ThemeContext";
 
 const RootLayout = () => {
   const { theme } = use(ThemeContext);

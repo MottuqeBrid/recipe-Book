@@ -12,7 +12,7 @@ const CommentsPage = () => {
 
   // Fetch all recipes
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch(`${import.meta.env.VITE_API_URL}/recipes`)
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch(() => toast.error("Failed to load recipes"));
@@ -22,7 +22,9 @@ const CommentsPage = () => {
   useEffect(() => {
     if (!selectedRecipe) return;
     fetch(
-      `http://localhost:5000/recipes/comments?recipeId=${selectedRecipe._id}`
+      `${import.meta.env.VITE_API_URL}/recipes/comments?recipeId=${
+        selectedRecipe._id
+      }`
     )
       .then((res) => res.json())
       .then((data) => setComments(data))
@@ -44,11 +46,14 @@ const CommentsPage = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/recipes/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(commentData),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/recipes/comments`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(commentData),
+        }
+      );
 
       if (res.ok) {
         setComments([...comments, commentData]);
@@ -73,7 +78,7 @@ const CommentsPage = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/recipes/comments/${commentId}`,
+        `${import.meta.env.VITE_API_URL}/recipes/comments/${commentId}`,
         {
           method: "DELETE",
         }
@@ -152,27 +157,6 @@ const CommentsPage = () => {
             <div className="max-h-64 overflow-y-auto mb-4">
               {comments.length === 0 && <p>No comments yet. Be the first!</p>}
 
-              {/* {comments.map((comment, i) => (
-                <div
-                  key={i}
-                  className="border-b border-gray-300 dark:border-gray-700 py-2 flex items-center space-x-3"
-                >
-                  {comment.userPhoto && (
-                    <img
-                      src={comment.userPhoto}
-                      alt={comment.userName}
-                      className="w-8 h-8 rounded-full"
-                    />
-                  )}
-                  <div>
-                    <p className="font-semibold">{comment.userName}</p>
-                    <p>{comment.text}</p>
-                    <small className="text-gray-500 dark:text-gray-400">
-                      {new Date(comment.createdAt).toLocaleString()}
-                    </small>
-                  </div>
-                </div>
-              ))} */}
               {comments.map((comment, i) => (
                 <div
                   key={i}

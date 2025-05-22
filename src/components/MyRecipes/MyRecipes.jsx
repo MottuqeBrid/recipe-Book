@@ -16,11 +16,10 @@ const MyRecipes = () => {
   useEffect(() => {
     const fetchMyRecipes = async () => {
       const res = await fetch(
-        `http://localhost:5000/recipes/email/${user.email}`
+        `${import.meta.env.VITE_API_URL}/recipes/email/${user.email}`
       );
       const data = await res.json();
       setMyRecipes(data);
-      // console.log(data);
     };
 
     if (user?.email) fetchMyRecipes();
@@ -32,7 +31,7 @@ const MyRecipes = () => {
     );
     if (!confirmDelete) return;
 
-    const res = await fetch(`http://localhost:5000/recipes/${id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/recipes/${id}`, {
       method: "DELETE",
     });
 
@@ -80,7 +79,7 @@ const MyRecipes = () => {
     };
 
     const res = await fetch(
-      `http://localhost:5000/recipes/${editingRecipe._id}`,
+      `${import.meta.env.VITE_API_URL}/recipes/${editingRecipe._id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -102,7 +101,6 @@ const MyRecipes = () => {
       toast.error("Update failed.");
     }
   };
-  // console.log(myRecipes);
 
   return (
     <div className="max-w-6xl mx-auto py-10 px-4">

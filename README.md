@@ -1,6 +1,6 @@
 # RecipeVerse 🍽️ - Your Ultimate Recipe & Blogging Companion
 
-🌐 **Live Site:** [https://your-recipeverse-site-url.com](https://your-recipeverse-site-url.com)
+🌐 **Live Site:** [https://recipe-book-27cb2.web.app/](https://recipe-book-27cb2.web.app/)
 
 ## 🔥 Features
 

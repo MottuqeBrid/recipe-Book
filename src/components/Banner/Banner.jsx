@@ -23,20 +23,19 @@ const Banner = ({ topRecipes }) => {
       >
         {topRecipes.map((recipe) => (
           <SwiperSlide key={recipe._id}>
-            <div className="bg-whitee shadow-lg rounded-2xl overflow-hidden">
+            <div className="bg-base-100 rounded-2xl shadow-xl mb-10 overflow-hidden">
               <img
                 src={recipe.image}
                 alt={recipe.title}
                 className="w-full h-48 object-cover"
               />
-              <div className="p-5">
+              <div className="p-5 space-y-3">
                 <h2 className="text-xl font-semibold text-gray-800e">
                   {recipe.title}
                 </h2>
-                <p className="text-gray-600 mt-2">{recipe.description}</p>
                 <Link
                   to={`/recipes/${recipe._id}`}
-                  className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
+                  className="mt-4 bg-primary text-white px-4 py-2 rounded-xl hover:bg-secondary transition"
                 >
                   Learn More
                 </Link>

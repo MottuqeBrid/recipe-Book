@@ -14,6 +14,7 @@ import CommentsPage from "../CommentsPage/CommentsPage";
 import BlogPage from "../BlogPage/BlogPage";
 import CreateBlog from "../CreateBlog/CreateBlog";
 import ViewBlogPage from "../ViewBlogPage/ViewBlogPage";
+import DashboardLayout from "../Layout/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +93,33 @@ export const router = createBrowserRouter([
             <CommentsPage />
           </PrivateRoute>
         ),
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <h1>Welcome to the Dashboard</h1>,
+      },
+      {
+        path: "blogs",
+        element: <div>Blogs Page</div>,
+      },
+      {
+        path: "profile",
+        element: <div>Profile Page</div>,
+      },
+      {
+        path: "settings",
+        element: <div>Settings Page</div>,
       },
     ],
   },

@@ -1,5 +1,5 @@
 // src/components/Navbar.jsx
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import useAuth from "../../providers/useAuth";
 import ThemeToggle from "./ThemeToggle";
 import { Tooltip } from "react-tooltip";
@@ -8,7 +8,7 @@ const Navbar = () => {
   const { user, logout } = useAuth();
 
   return (
-    <div className="navbar bg-base-100 shadow-md">
+    <div className={`navbar bg-primary shadow-md sticky top-0 z-50`}>
       <div className="flex-1">
         <div className="flex items-center gap-4">
           <Link to="/" className="text-xl font-bold">
@@ -20,24 +20,27 @@ const Navbar = () => {
       <div className="flex-none gap-2">
         <ul className="menu menu-horizontal px-1 hidden sm:flex">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/recipes">All Recipes</Link>
+            <NavLink to="/recipes">All Recipes</NavLink>
           </li>
           <li>
-            <Link to="/blogs">Blog</Link>
+            <NavLink to="/blogs">Blog</NavLink>
           </li>
           {user && (
             <>
               <li>
-                <Link to="/add-recipe">Add Recipe</Link>
+                <NavLink to="/add-recipe">Add Recipe</NavLink>
               </li>
               <li>
-                <Link to="/my-recipes">My Recipes</Link>
+                <NavLink to="/my-recipes">My Recipes</NavLink>
               </li>
               <li>
-                <Link to="/comments">Comments</Link>
+                <NavLink to="/comments">Comments</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard">Dashboard</NavLink>
               </li>
             </>
           )}

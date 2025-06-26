@@ -26,7 +26,9 @@ const RecipeCard = ({ recipe }) => {
         </p>
         <div className="card-actions justify-end">
           <Link to={`/recipes/${_id}`}>
-            <button className="btn btn-outline btn-sm">View Details</button>
+            <button className="btn btn-outline btn-primary btn-sm">
+              View Details
+            </button>
           </Link>
         </div>
       </div>

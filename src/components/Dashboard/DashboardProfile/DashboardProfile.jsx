@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { motion as Motion } from "framer-motion";
 import { updateProfile } from "firebase/auth";
-import useAuth from "../../providers/useAuth";
-import { ThemeContext } from "../../providers/ThemeContext";
+import useAuth from "../../../providers/useAuth";
+import { ThemeContext } from "../../../providers/ThemeContext";
 
-export default function Profile() {
+const DashboardProfile = () => {
   const { auth } = useAuth();
   const currentUser = auth.currentUser;
   const [themeData, setThemeData] = useState("light");
@@ -41,7 +41,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="min-h-screen  p-8">
+    <div className="min-h-screen p-8">
       <Motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function Profile() {
         <div className="text-center mt-6">
           <button
             onClick={() => setIsOpen(true)}
-            className="px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-xl shadow"
+            className="px-6 py-2 btn-primary btn font-semibold rounded-xl shadow"
           >
             Update Profile
           </button>
@@ -121,7 +121,7 @@ export default function Profile() {
                 </button>
                 <button
                   onClick={handleUpdate}
-                  className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+                  className="px-4 py-2 btn-primary btn"
                 >
                   Save
                 </button>
@@ -132,4 +132,6 @@ export default function Profile() {
       </Dialog>
     </div>
   );
-}
+};
+
+export default DashboardProfile;

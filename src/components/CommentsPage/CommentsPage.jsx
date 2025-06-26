@@ -97,7 +97,7 @@ const CommentsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6 max-w-7xl mx-auto">
+    <div className="min-h-screen p-6 max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-center">
         All Recipes & Comments
       </h1>

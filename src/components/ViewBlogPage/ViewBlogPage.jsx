@@ -25,7 +25,7 @@ const ViewBlog = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800 dark:text-white">
+    <div className="max-w-4xl mx-auto px-4 py-10 ">
       {blog.posterImage && (
         <img
           src={blog.posterImage}

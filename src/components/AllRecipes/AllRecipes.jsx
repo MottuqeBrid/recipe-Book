@@ -32,6 +32,22 @@ const AllRecipes = () => {
     }
   };
 
+  const handleSort = (e) => {
+    const value = e.target.value;
+    let sortedRecipes = [...filteredRecipes];
+
+    if (value === "a-z") {
+      sortedRecipes.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (value === "z-a") {
+      sortedRecipes.sort((a, b) => b.title.localeCompare(a.title));
+    }
+    else {
+      sortedRecipes = [...filteredRecipes];
+    }
+
+    setFilteredRecipes(sortedRecipes);
+  };
+
   if (loading)
     return <div className="text-center py-20 text-xl">Loading...</div>;
 
@@ -40,7 +56,7 @@ const AllRecipes = () => {
       <h2 className="text-3xl font-bold text-center mb-6">All Recipes</h2>
 
       {/* Cuisine Filter Dropdown */}
-      <div className="mb-6 text-center">
+      <div className="mb-6 text-center flex items-center justify-center gap-4">
         <select
           value={selectedCuisine}
           onChange={handleCuisineChange}
@@ -52,6 +68,16 @@ const AllRecipes = () => {
           <option value="Indian">Indian</option>
           <option value="Chinese">Chinese</option>
           <option value="Others">Others</option>
+        </select>
+        <select
+          onChange={(e) => handleSort(e)}
+          name="sort"
+          className="select select-bordered w-full max-w-xs "
+          defaultValue="Default"
+        >
+          <option disabled={true}>Default</option>
+          <option value="a-z">A to Z</option>
+          <option value="z-a">Z to A</option>
         </select>
       </div>
 

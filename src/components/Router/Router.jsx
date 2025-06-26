@@ -15,6 +15,9 @@ import BlogPage from "../BlogPage/BlogPage";
 import CreateBlog from "../CreateBlog/CreateBlog";
 import ViewBlogPage from "../ViewBlogPage/ViewBlogPage";
 import DashboardLayout from "../Layout/DashboardLayout";
+import Overview from "./../Dashboard/Overview/Overview";
+import MyBlogsItems from "../Dashboard/MyBlogsItems/MyBlogsItems";
+import DashboardProfile from "../Dashboard/DashboardProfile/DashboardProfile";
 
 export const router = createBrowserRouter([
   {
@@ -107,19 +110,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <h1>Welcome to the Dashboard</h1>,
+        element: <Overview />,
       },
       {
         path: "blogs",
-        element: <div>Blogs Page</div>,
+        element: <MyBlogsItems />,
       },
       {
         path: "profile",
-        element: <div>Profile Page</div>,
-      },
-      {
-        path: "settings",
-        element: <div>Settings Page</div>,
+        element: <DashboardProfile />,
       },
     ],
   },
